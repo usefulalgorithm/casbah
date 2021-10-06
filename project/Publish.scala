@@ -74,7 +74,7 @@ object Publish {
     publishArtifact in Test := false,
     pomIncludeRepository := { _ => false },
     pomExtra := (
-      <url>http://github.com/mongodb/casbah</url>
+      <url>http://github.com/usefulalgorithm/casbah</url>
         <licenses>
           <license>
             <name>Apache 2</name>
@@ -83,8 +83,8 @@ object Publish {
           </license>
         </licenses>
         <scm>
-          <url>git@github.com:mongodb/casbah.git</url>
-          <connection>scm:git:git@github.com:mongodb/casbah.git</connection>
+          <url>git@github.com:usefulalgorithm/casbah.git</url>
+          <connection>scm:git:git@github.com:usefulalgorithm/casbah.git</connection>
         </scm>
         <developers>
           <developer>
@@ -96,6 +96,11 @@ object Publish {
             <id>brendan</id>
             <name>Brendan W. McAdams</name>
             <url>http://blog.evilmonkeylabs.net</url>
+          </developer>
+          <developer>
+            <id>usefulalgorithm</id>
+            <name>Tsung-Ju Lii</name>
+            <url>http://usfulalgorithm.github.io</url>
           </developer>
         </developers>
       ),
