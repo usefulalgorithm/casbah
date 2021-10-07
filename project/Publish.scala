@@ -27,8 +27,9 @@ object Publish {
   val propFilename: String = sys.props.getOrElse("publishProperties", Path.userHome.getAbsolutePath + "/.gradle/gradle.properties")
   val propFile = new File(propFilename)
 
-  val username = "nexusUsername"
-  val password = "nexusPassword"
+  val user = "user"
+  val hostname = "s01.oss.sonatype.org"
+  val password = "password"
   val keyId = "signing.keyId"
   val secretKeyRing = "signing.secretKeyRingFile"
   val keyPassword = "signing.password"
@@ -44,8 +45,8 @@ object Publish {
         PgpSettings.pgpSecretRing := file(props.getProperty(secretKeyRing)),
         credentials += Credentials(
           "Sonatype Nexus Repository Manager",
-          "oss.sonatype.org",
-          props.getProperty(username),
+          hostname,
+          props.getProperty(user),
           props.getProperty(password)),
         publishSnapshot <<= publishSnapshotTask
       )
@@ -64,7 +65,7 @@ object Publish {
 
   lazy val mavenSettings = Seq(
     publishTo := {
-      val nexus = "https://oss.sonatype.org/"
+      val nexus = s"https://$hostname/"
       if (isSnapshot.value)
         Some("snapshots" at nexus + "content/repositories/snapshots")
       else

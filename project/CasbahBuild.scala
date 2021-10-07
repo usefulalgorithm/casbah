@@ -26,8 +26,8 @@ object CasbahBuild extends Build {
   import Resolvers._
 
   val buildSettings = Seq(
-    organization := "org.mongodb",
-    organizationHomepage := Some(url("http://www.mongodb.org")),
+    organization := "io.github.usefulalgorithm",
+    organizationHomepage := Some(url("http://github.com/usefulalgorithm/casbah")),
     version := "3.1.2-SNAPSHOT",
     scalaVersion := "2.11.8",
     crossScalaVersions := Seq("2.11.8", "2.10.6", "2.12.1"),
