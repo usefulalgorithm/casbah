@@ -28,7 +28,7 @@ object CasbahBuild extends Build {
   val buildSettings = Seq(
     organization := "io.github.usefulalgorithm",
     organizationHomepage := Some(url("http://github.com/usefulalgorithm/casbah")),
-    version := "3.1.2-SNAPSHOT",
+    version := "3.1.3-SNAPSHOT",
     scalaVersion := "2.11.8",
     crossScalaVersions := Seq("2.11.8", "2.10.6", "2.12.1"),
     resolvers := casbahResolvers,
